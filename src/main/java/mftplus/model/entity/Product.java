@@ -11,7 +11,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 public class Product {
-    private String productId;
+    private int productId;
     private String Name;
     private int price;
     private int stock;

@@ -11,8 +11,9 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 public class Customer {
-    private String customerId;
+    private int customerId;
     private String Name;
+    private String Family;
     private String Email;
     private String Phone;
 
