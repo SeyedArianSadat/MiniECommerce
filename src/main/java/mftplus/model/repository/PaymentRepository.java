@@ -15,7 +15,7 @@ public class PaymentRepository implements Repository<Payment,Integer>,AutoClosea
     private PreparedStatement preparedStatement;
     private final PaymentMapper Mapper = new PaymentMapper();
 
-    public  PaymentRepository(Connection connection) throws SQLException {
+    public  PaymentRepository() throws SQLException {
         connection= ConnectionProvider.getProvider().getOracleConnection();
 
     }
@@ -27,7 +27,7 @@ public class PaymentRepository implements Repository<Payment,Integer>,AutoClosea
         preparedStatement.setInt(2, payment.getOrderId());
         preparedStatement.setDate(3, Date.valueOf(payment.getPaymentDate()));
         preparedStatement.setDouble(4, payment.getAmount());
-        preparedStatement.setString(5, payment.getMethod());
+        preparedStatement.setString(5, payment.getMethod().toString());
         preparedStatement.executeUpdate();
     }
 
@@ -37,7 +37,7 @@ public class PaymentRepository implements Repository<Payment,Integer>,AutoClosea
         preparedStatement.setInt(1, payment.getOrderId());
         preparedStatement.setDate(2, Date.valueOf(payment.getPaymentDate()));
         preparedStatement.setDouble(3, payment.getAmount());
-        preparedStatement.setString(4, payment.getMethod());
+        preparedStatement.setString(4, payment.getMethod().toString());
         preparedStatement.setInt(5, payment.getPaymentId());
         preparedStatement.executeUpdate();
 

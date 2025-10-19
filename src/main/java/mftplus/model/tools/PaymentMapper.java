@@ -1,5 +1,6 @@
 package mftplus.model.tools;
 
+import mftplus.model.entity.Method;
 import mftplus.model.entity.Payment;
 
 import java.sql.ResultSet;
@@ -11,7 +12,7 @@ public class PaymentMapper {
                 .orderId(rs.getInt("ORDER_ID"))
                 .paymentDate(rs.getDate("PAYMENT_DATE").toLocalDate())
                 .amount(rs.getInt("AMOUNT"))
-                .method(rs.getString("METHOD"))
+                .method(Method.valueOf(rs.getString("METHOD")))
                 .build();
     }
 }

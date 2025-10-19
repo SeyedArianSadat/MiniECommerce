@@ -17,7 +17,7 @@ public class ProductRepository implements Repository<Product, Integer>, AutoClos
     private PreparedStatement preparedStatement;
     private final ProductMapper Mapper = new ProductMapper();
 
-    public ProductRepository(Connection connection) throws SQLException {
+    public ProductRepository() throws SQLException {
         connection = ConnectionProvider.getProvider().getOracleConnection();
     }
 
@@ -29,13 +29,13 @@ public class ProductRepository implements Repository<Product, Integer>, AutoClos
         preparedStatement.setString(2, product.getName());
         preparedStatement.setDouble(3, product.getPrice());
         preparedStatement.setInt(4, product.getStock());
-        preparedStatement.executeUpdate();
+        preparedStatement.execute();
 
     }
 
     @Override
     public void edit(Product product) throws Exception {
-        preparedStatement=connection.prepareStatement("UPDATE product SET name = ?,price = ?,stock = ? WHERE product_id = ?");
+        preparedStatement=connection.prepareStatement("UPDATE product SET NAME = ?,PRICE = ?,STOCK = ? WHERE PRODUCT_ID = ?");
         preparedStatement.setString(1, product.getName());
         preparedStatement.setDouble(2, product.getPrice());
         preparedStatement.setInt(3, product.getStock());
@@ -45,7 +45,7 @@ public class ProductRepository implements Repository<Product, Integer>, AutoClos
 
     @Override
     public void delete(Integer id) throws Exception {
-        preparedStatement=connection.prepareStatement("DELETE FROM product where product_id = ?");
+        preparedStatement=connection.prepareStatement("DELETE FROM product where PRODUCT_ID = ?");
         preparedStatement.setInt(1, id);
         preparedStatement.executeUpdate();
 
@@ -54,7 +54,7 @@ public class ProductRepository implements Repository<Product, Integer>, AutoClos
     @Override
     public List<Product> findAll() throws Exception {
         List<Product> products = new ArrayList<>();
-        preparedStatement=connection.prepareStatement("SELECT * FROM product ORDER BY product_id");
+        preparedStatement=connection.prepareStatement("SELECT * FROM product ORDER BY PRODUCT_ID");
         ResultSet rs = preparedStatement.executeQuery();
         while(rs.next())
             products.add(Mapper.map(rs));
@@ -64,7 +64,7 @@ public class ProductRepository implements Repository<Product, Integer>, AutoClos
 
     @Override
     public Product findById(Integer id) throws Exception {
-        preparedStatement=connection.prepareStatement("SELECT * FROM product WHERE product_id = ?");
+        preparedStatement=connection.prepareStatement("SELECT * FROM product WHERE PRODUCT_ID = ?");
         preparedStatement.setInt(1, id);
         ResultSet rs = preparedStatement.executeQuery();
         return rs.next() ? Mapper.map(rs) : null;

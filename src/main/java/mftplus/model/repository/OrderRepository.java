@@ -14,7 +14,7 @@ public class OrderRepository implements Repository<Order, Integer>, AutoCloseabl
     private PreparedStatement preparedStatement;
     private final OrderMapper Mapper = new OrderMapper();
 
-    public OrderRepository(Connection connection) throws SQLException {
+    public OrderRepository() throws SQLException {
         connection = ConnectionProvider.getProvider().getOracleConnection();
     }
 

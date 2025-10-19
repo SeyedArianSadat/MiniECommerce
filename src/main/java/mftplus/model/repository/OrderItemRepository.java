@@ -18,13 +18,13 @@ public class OrderItemRepository implements Repository<OrderItem,Integer>,AutoCl
     private PreparedStatement preparedStatement;
     private final OrderItemMapper Mapper = new OrderItemMapper();
 
-    public  OrderItemRepository(Connection connection) throws SQLException {
+    public  OrderItemRepository() throws SQLException {
         connection= ConnectionProvider.getProvider().getOracleConnection();
 
     }
     @Override
     public void save(OrderItem orderItem) throws Exception{
-        orderItem.setItemId(ConnectionProvider.getProvider().getNextId("OrderItem_SEQ"));
+        orderItem.setItemId(ConnectionProvider.getProvider().getNextId("ITEM_SEQ"));
         preparedStatement=connection.prepareStatement("insert into ORDER_ITEM(ORDER_ID,ITEM_ID,PRODUCT_ID,PRICE,QUANTITY) values(?,?,?,?,?)");
         preparedStatement.setInt(1, orderItem.getOrderId());
         preparedStatement.setInt(2, orderItem.getItemId());

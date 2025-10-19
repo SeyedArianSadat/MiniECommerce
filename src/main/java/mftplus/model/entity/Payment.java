@@ -17,7 +17,7 @@ public class Payment {
     private int orderId;
     private LocalDate paymentDate;
     private int amount;
-    private String method;
+    private Method method;
 
     @Override
     public String toString() {
