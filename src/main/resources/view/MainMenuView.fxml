@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="mftplus.controller.MainMenuController"
+            prefHeight="400" prefWidth="600">
+
+    <top>
+        <Label text="🛍️ Mini E-Commerce System"
+               style="-fx-font-size: 28; -fx-font-weight: bold; -fx-padding: 20; -fx-alignment: center;" />
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <Button text="👤 Manage Customers" onAction="#openCustomer" prefWidth="250" />
+            <Button text="📦 Manage Products" onAction="#openProduct" prefWidth="250" />
+            <Button text="🧾 Manage Orders" onAction="#openOrder" prefWidth="250" />
+            <Button text="💳 Manage Payments" onAction="#openPayment" prefWidth="250" />
+            <Button text="🚪 Exit" onAction="#exitApp" prefWidth="250" />
+        </VBox>
+    </center>
+
+</BorderPane>

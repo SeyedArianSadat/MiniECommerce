@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="mftplus.controller.ProductController"
+            prefWidth="800" prefHeight="600">
+
+    <top>
+        <Label text="📦 Product Management"
+               style="-fx-font-size: 26; -fx-font-weight: bold; -fx-padding: 20 0 10 0; -fx-alignment: center;" />
+    </top>
+
+    <center>
+        <VBox spacing="10" alignment="CENTER" padding="20">
+            <GridPane hgap="15" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" prefWidth="120"/>
+                    <ColumnConstraints prefWidth="200"/>
+                </columnConstraints>
+
+                <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Price:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="priceField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Stock:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="stockField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="15" alignment="CENTER" padding="10">
+                <Button text="💾 Save" onAction="#saveProduct"/>
+                <Button text="✏️ Edit" onAction="#editProduct"/>
+                <Button text="🗑️ Delete" onAction="#deleteProduct"/>
+                <Button text="🔍 Find All" onAction="#findAllProducts"/>
+                <Button text="↩️ Clear" onAction="#clearFields"/>
+            </HBox>
+
+            <TableView fx:id="productTable" prefHeight="300" prefWidth="700">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="80"/>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="250"/>
+                    <TableColumn fx:id="priceColumn" text="Price" prefWidth="150"/>
+                    <TableColumn fx:id="stockColumn" text="Stock" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
