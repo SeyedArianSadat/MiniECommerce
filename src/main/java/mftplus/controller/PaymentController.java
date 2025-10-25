@@ -9,6 +9,8 @@ import mftplus.model.service.PaymentService;
 
 import java.time.LocalDate;
 
+import static mftplus.model.entity.Method.*;
+
 public class PaymentController {
 
     @FXML private TextField orderIdField;
@@ -27,7 +29,7 @@ public class PaymentController {
 
     @FXML
     public void initialize() {
-        methodBox.getItems().addAll("Credit Card", "PayPal", "Cash", "Bank Transfer");
+        methodBox.getItems().addAll("Card", "Cash", "Online");
 
         idColumn.setCellValueFactory(c -> new javafx.beans.property.SimpleIntegerProperty(c.getValue().getPaymentId()).asObject());
         orderIdColumn.setCellValueFactory(c -> new javafx.beans.property.SimpleIntegerProperty(c.getValue().getOrderId()).asObject());

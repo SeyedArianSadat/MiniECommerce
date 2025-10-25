@@ -13,7 +13,10 @@
     </top>
 
     <center>
-        <VBox spacing="10" alignment="CENTER" padding="20">
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
             <GridPane hgap="15" vgap="10">
                 <columnConstraints>
                     <ColumnConstraints halignment="RIGHT" prefWidth="120"/>
@@ -30,7 +33,10 @@
                 <TextField fx:id="stockField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
             </GridPane>
 
-            <HBox spacing="15" alignment="CENTER" padding="10">
+            <HBox spacing="15" alignment="CENTER">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
                 <Button text="💾 Save" onAction="#saveProduct"/>
                 <Button text="✏️ Edit" onAction="#editProduct"/>
                 <Button text="🗑️ Delete" onAction="#deleteProduct"/>
