@@ -2,22 +2,26 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="mftplus.controller.MainMenuController"
-            prefHeight="400" prefWidth="600">
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="mftplus.controller.MainMenuController"
+            prefWidth="600" prefHeight="400">
 
     <top>
         <Label text="🛍️ Mini E-Commerce System"
-               style="-fx-font-size: 28; -fx-font-weight: bold; -fx-padding: 20; -fx-alignment: center;" />
+               BorderPane.alignment="CENTER"
+               style="-fx-font-size: 26; -fx-font-weight: bold; -fx-padding: 20;"/>
     </top>
 
     <center>
-        <VBox alignment="CENTER" spacing="20">
-            <Button text="👤 Manage Customers" onAction="#openCustomer" prefWidth="250" />
-            <Button text="📦 Manage Products" onAction="#openProduct" prefWidth="250" />
-            <Button text="🧾 Manage Orders" onAction="#openOrder" prefWidth="250" />
-            <Button text="💳 Manage Payments" onAction="#openPayment" prefWidth="250" />
-            <Button text="🚪 Exit" onAction="#exitApp" prefWidth="250" />
+        <VBox spacing="20" alignment="CENTER">
+            <Button text="👤 Customers" prefWidth="250" onAction="#openCustomerView"/>
+            <Button text="📦 Products" prefWidth="250" onAction="#openProductView"/>
+            <Button text="🧾 Orders" prefWidth="250" onAction="#openOrderView"/>
+            <Button text="🛒 Order Items" prefWidth="250" onAction="#openOrderItemView"/>
+            <Button text="💳 Payments" prefWidth="250" onAction="#openPaymentView"/>
         </VBox>
     </center>
 

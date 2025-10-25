@@ -4,15 +4,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.Node;
-import javafx.event.ActionEvent;
 
 public class MainMenuController {
 
     private void openWindow(String fxml, String title) {
         try {
             Stage stage = new Stage();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/" + fxml))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/" + fxml))));
             stage.setTitle(title);
             stage.show();
         } catch (Exception e) {
@@ -21,27 +19,27 @@ public class MainMenuController {
     }
 
     @FXML
-    public void openCustomer(ActionEvent event) {
-        openWindow("resources/view/CustomerView.fxml", "Customer Management");
+    public void openCustomerView() {
+        openWindow("CustomerView.fxml", "Customers");
     }
 
     @FXML
-    public void openProduct(ActionEvent event) {
-        openWindow("view/ProductView.fxml", "Product Management");
+    public void openProductView() {
+        openWindow("ProductView.fxml", "Products");
     }
 
     @FXML
-    public void openOrder(ActionEvent event) {
-        openWindow("view/OrderView.fxml", "Order Management");
+    public void openOrderView() {
+        openWindow("OrderView.fxml", "Orders");
     }
 
     @FXML
-    public void openPayment(ActionEvent event) {
-        openWindow("view/PaymentView.fxml", "Payment Management");
+    public void openOrderItemView() {
+        openWindow("OrderItemView.fxml", "Order Items");
     }
 
     @FXML
-    public void exitApp(ActionEvent event) {
-        ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
+    public void openPaymentView() {
+        openWindow("PaymentView.fxml", "Payments");
     }
 }

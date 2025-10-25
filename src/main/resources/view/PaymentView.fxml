@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="mftplus.controller.PaymentController"
+            prefWidth="900" prefHeight="600">
+
+    <top>
+        <Label text="💳 Payments"
+               style="-fx-font-size: 26; -fx-font-weight: bold; -fx-padding: 20 0 10 0; -fx-alignment: center;"/>
+    </top>
+
+    <center>
+        <VBox spacing="15" alignment="CENTER" padding="20">
+
+            <GridPane hgap="15" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" prefWidth="150"/>
+                    <ColumnConstraints prefWidth="200"/>
+                </columnConstraints>
+
+                <Label text="Order ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="orderIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Payment Date:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="paymentDatePicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Amount:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="amountField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Method:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="methodBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="15" alignment="CENTER" padding="10">
+                <Button text="💾 Save" onAction="#savePayment"/>
+                <Button text="✏️ Edit" onAction="#editPayment"/>
+                <Button text="🗑️ Delete" onAction="#deletePayment"/>
+                <Button text="🔍 Find All" onAction="#findAllPayments"/>
+                <Button text="↩️ Clear" onAction="#clearFields"/>
+            </HBox>
+
+            <TableView fx:id="paymentTable" prefHeight="300" prefWidth="850">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="Payment ID" prefWidth="100"/>
+                    <TableColumn fx:id="orderIdColumn" text="Order ID" prefWidth="150"/>
+                    <TableColumn fx:id="paymentDateColumn" text="Date" prefWidth="150"/>
+                    <TableColumn fx:id="amountColumn" text="Amount" prefWidth="150"/>
+                    <TableColumn fx:id="methodColumn" text="Method" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
