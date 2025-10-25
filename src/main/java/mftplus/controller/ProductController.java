@@ -8,15 +8,23 @@ import mftplus.model.service.ProductService;
 
 public class ProductController {
 
-    @FXML private TextField nameField;
-    @FXML private TextField priceField;
-    @FXML private TextField stockField;
+    @FXML
+    private TextField nameField;
+    @FXML
+    private TextField priceField;
+    @FXML
+    private TextField stockField;
 
-    @FXML private TableView<Product> productTable;
-    @FXML private TableColumn<Product, Integer> idColumn;
-    @FXML private TableColumn<Product, String> nameColumn;
-    @FXML private TableColumn<Product, Integer> priceColumn;
-    @FXML private TableColumn<Product, Integer> stockColumn;
+    @FXML
+    private TableView<Product> productTable;
+    @FXML
+    private TableColumn<Product, Integer> idColumn;
+    @FXML
+    private TableColumn<Product, String> nameColumn;
+    @FXML
+    private TableColumn<Product, Integer> priceColumn;
+    @FXML
+    private TableColumn<Product, Integer> stockColumn;
 
     private final ProductService service = ProductService.getService();
 

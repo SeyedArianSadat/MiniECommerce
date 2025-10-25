@@ -8,17 +8,27 @@ import mftplus.model.service.OrderItemService;
 
 public class OrderItemController {
 
-    @FXML private TextField orderIdField;
-    @FXML private TextField productIdField;
-    @FXML private TextField quantityField;
-    @FXML private TextField priceField;
+    @FXML
+    private TextField orderIdField;
+    @FXML
+    private TextField productIdField;
+    @FXML
+    private TextField quantityField;
+    @FXML
+    private TextField priceField;
 
-    @FXML private TableView<OrderItem> itemTable;
-    @FXML private TableColumn<OrderItem, Integer> idColumn;
-    @FXML private TableColumn<OrderItem, Integer> orderIdColumn;
-    @FXML private TableColumn<OrderItem, Integer> productIdColumn;
-    @FXML private TableColumn<OrderItem, Integer> quantityColumn;
-    @FXML private TableColumn<OrderItem, Integer> priceColumn;
+    @FXML
+    private TableView<OrderItem> itemTable;
+    @FXML
+    private TableColumn<OrderItem, Integer> idColumn;
+    @FXML
+    private TableColumn<OrderItem, Integer> orderIdColumn;
+    @FXML
+    private TableColumn<OrderItem, Integer> productIdColumn;
+    @FXML
+    private TableColumn<OrderItem, Integer> quantityColumn;
+    @FXML
+    private TableColumn<OrderItem, Integer> priceColumn;
 
     private final OrderItemService service = OrderItemService.getService();
 

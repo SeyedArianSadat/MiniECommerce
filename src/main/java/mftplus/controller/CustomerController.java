@@ -8,17 +8,27 @@ import mftplus.model.service.CustomerService;
 
 public class CustomerController {
 
-    @FXML private TextField nameField;
-    @FXML private TextField familyField;
-    @FXML private TextField emailField;
-    @FXML private TextField phoneField;
+    @FXML
+    private TextField nameField;
+    @FXML
+    private TextField familyField;
+    @FXML
+    private TextField emailField;
+    @FXML
+    private TextField phoneField;
 
-    @FXML private TableView<Customer> customerTable;
-    @FXML private TableColumn<Customer, Integer> idColumn;
-    @FXML private TableColumn<Customer, String> nameColumn;
-    @FXML private TableColumn<Customer, String> familyColumn;
-    @FXML private TableColumn<Customer, String> emailColumn;
-    @FXML private TableColumn<Customer, String> phoneColumn;
+    @FXML
+    private TableView<Customer> customerTable;
+    @FXML
+    private TableColumn<Customer, Integer> idColumn;
+    @FXML
+    private TableColumn<Customer, String> nameColumn;
+    @FXML
+    private TableColumn<Customer, String> familyColumn;
+    @FXML
+    private TableColumn<Customer, String> emailColumn;
+    @FXML
+    private TableColumn<Customer, String> phoneColumn;
 
     private final CustomerService service = CustomerService.getService();
 

@@ -10,15 +10,23 @@ import java.time.LocalDate;
 
 public class OrderController {
 
-    @FXML private TextField customerIdField;
-    @FXML private DatePicker orderDatePicker;
-    @FXML private TextField totalAmountField;
+    @FXML
+    private TextField customerIdField;
+    @FXML
+    private DatePicker orderDatePicker;
+    @FXML
+    private TextField totalAmountField;
 
-    @FXML private TableView<Order> orderTable;
-    @FXML private TableColumn<Order, Integer> idColumn;
-    @FXML private TableColumn<Order, Integer> customerIdColumn;
-    @FXML private TableColumn<Order, LocalDate> dateColumn;
-    @FXML private TableColumn<Order, Integer> amountColumn;
+    @FXML
+    private TableView<Order> orderTable;
+    @FXML
+    private TableColumn<Order, Integer> idColumn;
+    @FXML
+    private TableColumn<Order, Integer> customerIdColumn;
+    @FXML
+    private TableColumn<Order, LocalDate> dateColumn;
+    @FXML
+    private TableColumn<Order, Integer> amountColumn;
 
     private final OrderService service = OrderService.getService();
 

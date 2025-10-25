@@ -9,21 +9,30 @@ import mftplus.model.service.PaymentService;
 
 import java.time.LocalDate;
 
-import static mftplus.model.entity.Method.*;
 
 public class PaymentController {
 
-    @FXML private TextField orderIdField;
-    @FXML private DatePicker paymentDatePicker;
-    @FXML private TextField amountField;
-    @FXML private ComboBox<String> methodBox;
+    @FXML
+    private TextField orderIdField;
+    @FXML
+    private DatePicker paymentDatePicker;
+    @FXML
+    private TextField amountField;
+    @FXML
+    private ComboBox<String> methodBox;
 
-    @FXML private TableView<Payment> paymentTable;
-    @FXML private TableColumn<Payment, Integer> idColumn;
-    @FXML private TableColumn<Payment, Integer> orderIdColumn;
-    @FXML private TableColumn<Payment, LocalDate> paymentDateColumn;
-    @FXML private TableColumn<Payment, Integer> amountColumn;
-    @FXML private TableColumn<Payment, String> methodColumn;
+    @FXML
+    private TableView<Payment> paymentTable;
+    @FXML
+    private TableColumn<Payment, Integer> idColumn;
+    @FXML
+    private TableColumn<Payment, Integer> orderIdColumn;
+    @FXML
+    private TableColumn<Payment, LocalDate> paymentDateColumn;
+    @FXML
+    private TableColumn<Payment, Integer> amountColumn;
+    @FXML
+    private TableColumn<Payment, String> methodColumn;
 
     private final PaymentService service = PaymentService.getService();
 
